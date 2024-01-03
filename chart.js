@@ -1,5 +1,11 @@
 // Setting up for doughnut chart data
 
+// HTML Data
+{/* <canvas id="jobApplicationChart" aria-label="Job App Chart" role="img"></canvas> */}
+
+
+
+// Javascript data
 // const data = {
 //     labels: ['Applied', 'Interviewed', 'Offer', 'Declined'],
 //     datasets: [{
