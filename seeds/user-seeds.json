@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Jason Bourne",
+        "email": "david.webb@gmail.com",
+        "password": //WHAT
+
+    },
+    {
+        "name": "Forrest Gump",
+        "email": "runforrest@yahoo.com",
+        "password": //WHAT
+    },
+    {
+        "name": "Chris Kringle",
+        "email": "bigred@outlook.com",
+        "password": //WHAT
+    }
+]
+
+// (async () => {
+//     let data = {
+//       name: 'Abraham Jujin',
+//       email: 'abe@gmail.com',
+//       password: 'abe1234',
+//       phoneNumber: '08168623107',
+//       role: 'admin',
+//     };
+//     let saltRounds = 10;
+//     let hashedPassword = await bcrypt.hash(data.password, saltRounds);
+  
+//     data.password = hashedPassword;
+//     console.log(data.password);
