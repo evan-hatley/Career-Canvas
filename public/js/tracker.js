@@ -17,9 +17,9 @@ const newFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/tracker');
         } else {
-            alert('Failed to add job');
+            alert('Failed to add this job');
         }
     }
 };
