@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/evan-hatley/Career-Canvas#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "chart.js": "^4.4.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
