@@ -1,44 +1,34 @@
-// document.getElementById('jobStatusForm').addEventListener('submit', async function(event) {
-//     event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('jobApplicationChart');
+    let myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Applied', 'Interviewed', 'Offered', 'Declined'],
+            datasets: [{
+                label: 'Job Application Status',
+                data: [0, 0, 0, 0], // Initial data set to zeros
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
 
-//     const applied = document.getElementById('applied').value;
-//     const interviewed = document.getElementById('interviewed').value;
-//     const offered = document.getElementById('offered').value;
-//     const declined = document.getElementById('declined').value;
+    document.getElementById('jobStatusForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-//     updateChart({ applied, interviewed, offered, declined });
-// });
+        // Retrieve values from the form
+        const applied = parseInt(document.getElementById('applied').value) || 0;
+        const interviewed = parseInt(document.getElementById('interviewed').value) || 0;
+        const offered = parseInt(document.getElementById('offered').value) || 0;
+        const declined = parseInt(document.getElementById('declined').value) || 0;
 
-// function updateChart(applied, interviews, offers, declines) {
-//     const ctx = document.getElementById('jobApplicationChart').getContext('2d');
-//     const myChart = new Chart(ctx, {
-//         type: 'doughnut',
-//         data: {
-//             labels: ['Applied', 'Interviews', 'Offers', 'Declines'],
-//             datasets: [{
-//                 label: 'Job Status',
-//                 data: [applied, interviews, offers, declines],
-//                 backgroundColor: [
-//                     'rgba(255, 99, 132, 0.2)',
-//                     'rgba(54, 162, 235, 0.2)',
-//                     'rgba(75, 192, 192, 0.2)',
-//                     'rgba(153, 102, 255, 0.2)'
-//                 ],
-//                 borderColor: [
-//                     'rgba(255, 99, 132, 1)',
-//                     'rgba(54, 162, 235, 1)',
-//                     'rgba(75, 192, 192, 1)',
-//                     'rgba(153, 102, 255, 1)'
-//                 ],
-//                 borderWidth: 1
-//             }]
-//         },
-//         options: {
-//             scales: {
-//                 y: {
-//                     beginAtZero: true
-//                 }
-//             }
-//         }
-//     });
-// }
+        // Update chart data
+        myChart.data.datasets[0].data = [applied, interviewed, offered, declined];
+        
+        // Redraw the chart
+        myChart.update();
+    });
+});
