@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const createJob = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#job-title').value.trim();
@@ -8,25 +8,20 @@ const newFormHandler = async (event) => {
     const notes = document.querySelector('#job-notes').value.trim();
 
     if (title && status && salary && location && notes) {
-        const response = await fetch(`/api/jobs`, {
+        const response = await fetch('/api/jobs', {
             method: 'POST',
             body: JSON.stringify({ title, status, salary, location, notes }),
-
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-
             document.location.replace('/tracker');
-
         } else {
-            alert('Failed to add job');
+            alert('Could not create job');
         }
     }
 };
 
 document
-    .querySelector('.new-job-form')
-    .addEventListener('submit', newFormHandler);
+    .querySelector('#new-job-form')
+    .addEventListener('submit', createJob);

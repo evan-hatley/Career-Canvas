@@ -13,4 +13,9 @@ function convertToSalary(salary) {
     }).format(salary);
 };
 
-module.exports = { formatWithCurrentDate, convertToSalary };
+// Compares 2 arguments.
+function eq(arg1, arg2) {
+    return arg1 === arg2;
+};
+
+module.exports = { formatWithCurrentDate, convertToSalary, eq };
