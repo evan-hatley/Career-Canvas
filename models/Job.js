@@ -11,7 +11,6 @@ Job.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -19,8 +18,8 @@ Job.init(
         // ENUM for status with predefined choices.
         // 4 options: applied, interviewed, offered, declined.
         status: {
-            type: DataTypes.ENUM('applied', 'interviewed', 'offered', 'declined'),
-            defaultValue: 'applied',
+            type: DataTypes.ENUM('Applied', 'Interviewed', 'Offered', 'Declined'),
+            defaultValue: 'Applied',
             allowNull: false,
         },
         salary: {
