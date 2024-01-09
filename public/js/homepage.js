@@ -1,51 +1,44 @@
-const jobStatusCount = {
-    applied: 0,
-    interviewed: 0,
-    offer: 0,
-    declined: 0
-};
+// document.getElementById('jobStatusForm').addEventListener('submit', async function(event) {
+//     event.preventDefault();
 
-function updateChart(chart, statusCount) {
-    chart.data.datasets[0].data = [
-        statusCount.applied,
-        statusCount.interviewed,
-        statusCount.offer,
-        statusCount.declined
-    ];
-    chart.update();
-}
+//     const applied = document.getElementById('applied').value;
+//     const interviewed = document.getElementById('interviewed').value;
+//     const offered = document.getElementById('offered').value;
+//     const declined = document.getElementById('declined').value;
 
-document.getElementById('newJobForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const jobStatus = document.getElementById('jobStatus').value;
-    
-    jobStatusCount[jobStatus]++;
-    
-    updateChart(jobApplicationChart, jobStatusCount);
+//     updateChart({ applied, interviewed, offered, declined });
+// });
 
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const data = {
-        labels: ['Applied', 'Interviewed', 'Offer', 'Declined'],
-        datasets: [{
-            label: 'Job Application Status',
-            data: [jobStatusCount.applied, jobStatusCount.interviewed, jobStatusCount.offer, jobStatusCount.declined],
-            hoverOffset: 4,
-            borderWidth: 1
-        }]
-    };
-
-    const ctx = document.getElementById('jobApplicationChart').getContext('2d');
-    const jobApplicationChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: data,
-        options: {
-            title: {
-                display: true,
-                text: 'Job Application Status'
-            },
-        }
-    });
-});
+// function updateChart(applied, interviews, offers, declines) {
+//     const ctx = document.getElementById('jobApplicationChart').getContext('2d');
+//     const myChart = new Chart(ctx, {
+//         type: 'doughnut',
+//         data: {
+//             labels: ['Applied', 'Interviews', 'Offers', 'Declines'],
+//             datasets: [{
+//                 label: 'Job Status',
+//                 data: [applied, interviews, offers, declines],
+//                 backgroundColor: [
+//                     'rgba(255, 99, 132, 0.2)',
+//                     'rgba(54, 162, 235, 0.2)',
+//                     'rgba(75, 192, 192, 0.2)',
+//                     'rgba(153, 102, 255, 0.2)'
+//                 ],
+//                 borderColor: [
+//                     'rgba(255, 99, 132, 1)',
+//                     'rgba(54, 162, 235, 1)',
+//                     'rgba(75, 192, 192, 1)',
+//                     'rgba(153, 102, 255, 1)'
+//                 ],
+//                 borderWidth: 1
+//             }]
+//         },
+//         options: {
+//             scales: {
+//                 y: {
+//                     beginAtZero: true
+//                 }
+//             }
+//         }
+//     });
+// }

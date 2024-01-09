@@ -4,14 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../public/js/homepage.js"></script>
+
 </head>
 
 <body>
-    <canvas id="jobApplicationChart"></canvas>
+<h1>Welcome to the Homepage, {{username}}!</h1>
+<h2>See how your job statuses are looking!</h2>
+<div><canvas id="jobApplicationChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script src="../public/js/homepage.js"></script>
+<script>
+  const ctx = document.getElementById('jobApplicationChart');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Applied', 'Interviewed', 'Offered', 'Declined'],
+      datasets: [{
+        label: 'Job Application Status',
+        data: [10, 6, 3, 1],
+         {{!-- data: [data.applied, data.interviewed, data.offered, data.declined], --}}
+        borderWidth: 1
+      }]
+    },
+       options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    
+  });
+</script></div>
+
+<form id="jobStatusForm">
+    <input type="number" id="applied" name="applied" placeholder="Applied">
+    <input type="number" id="interviewed" name="interviewed" placeholder="Interviewed">
+    <input type="number" id="offered" name="offered" placeholder="Offered">
+    <input type="number" id="declined" name="declined" placeholder="Declined">
+    <button type="submit">Submit</button>
+</form>
+
+
 
 </body>
 
 </html>
-
