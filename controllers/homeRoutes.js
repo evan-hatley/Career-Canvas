@@ -46,6 +46,28 @@ router.get('/job/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/job/:id/modify', withAuth, async (req, res) => {
+  try {
+    const jobData = await Job.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const job = jobData.get({ plain: true });
+
+    res.render('modifyJob', {
+      ...job,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Use withAuth middleware to prevent access to route.
 router.get('/tracker', withAuth, async (req, res) => {
   try {
@@ -61,11 +83,11 @@ router.get('/tracker', withAuth, async (req, res) => {
     })
 
     const user = userData.get({ plain: true });
-    const job = jobData.map((job) => job.get({ plain: true }));
+    const jobs = jobData.map((job) => job.get({ plain: true }));
 
     res.render('tracker', {
       ...user,
-      job,
+      jobs,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -73,9 +95,20 @@ router.get('/tracker', withAuth, async (req, res) => {
   }
 });
 
+router.get('/createJob', withAuth, async (req, res) => {
+  try {
+    res.render('createJob', {
+      logged_in: req.session.logged_in
+    });
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/signup', async (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/tracker');
     return;
   }
 
@@ -84,7 +117,7 @@ router.get('/signup', async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/tracker');
     return;
   }
 

@@ -14,24 +14,22 @@
                 <a href="/">Career Canvas</a>
             </h1>
             <nav>
-                <a href="/">Home</a>
-                <a href="/tracker">Job Tracker</a>
-                <!-- Conditionally render login or logout links -->
-                {{#if logged_in}}
-                <button id="logout">Logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
+                <ul>
+                    <li><a class="nav-links" href="/">Home</a></li>
+                    <li><a class="nav-links" href="/tracker">Job Tracker</a></li>
+                    {{#if logged_in}}
+                    <li><a class="nav-links" href="/" id="logout">Logout</a></li>
+                    {{else}}
+                    <li><a class="nav-links" href="/login">Login</a></li>
+                    {{/if}}
+                </ul>
             </nav>
         </header>
-        
+
         <main class="container container-fluid mt-5">
             <!-- Render the sub layout -->
             {{{ body }}}
         </main>
-        <footer>
-
-        </footer>
     </div>
 
     <!-- Render script for logged in users only -->

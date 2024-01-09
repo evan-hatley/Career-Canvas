@@ -5,7 +5,11 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     const newJob = await Job.create({
-      ...req.body,
+      title: req.body.title,
+      status: req.body.status,
+      salary: req.body.salary,
+      location: req.body.location,
+      notes: req.body.notes,
       user_id: req.session.user_id,
     });
 
@@ -15,7 +19,35 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.put('/:id/update', withAuth, async (req, res) => {
+  try {
+    const jobData = await Job.update({
+      title: req.body.title,
+      status: req.body.status,
+      salary: req.body.salary,
+      location: req.body.location,
+      notes: req.body.notes,
+    },
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      }
+    );
+
+    if (!jobData) {
+      res.status(404).json({ message: 'No job with this id found' });
+      return;
+    }
+
+    res.status(200).json(jobData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.delete('/:id/delete', withAuth, async (req, res) => {
   try {
     const jobData = await Job.destroy({
       where: {
@@ -25,7 +57,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!jobData) {
-      res.status(404).json({ message: 'No job with this id found!' });
+      res.status(404).json({ message: 'No job with this id found' });
       return;
     }
 
