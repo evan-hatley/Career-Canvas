@@ -15,7 +15,9 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+
+            document.location.replace('/tracker');
+          
         } else {
             // Not found (404) -> URL requested doesn't exist on server.
             // Bad request (400) -> Server understood request, but can't 
