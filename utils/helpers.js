@@ -1,10 +1,11 @@
 // Edit these into the Views
-const addCurrentDate = (status) => {
+function formatWithCurrentDate(status) {
     const currentDate = new Date().toLocaleDateString('en-US');
-    return `${status} - ${currentDate}`;
+    const formattedStatus = status[0].toUpperCase() + status.slice(1).toLowerCase();
+    return `${formattedStatus} - ${currentDate}`;
 };
 
-const convertToSalary = (salary) => {
+function convertToSalary(salary) {
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -12,4 +13,4 @@ const convertToSalary = (salary) => {
     }).format(salary);
 };
 
-module.exports = {addCurrentDate, convertToSalary};
+module.exports = { formatWithCurrentDate, convertToSalary };

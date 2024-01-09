@@ -1,17 +1,17 @@
 [
     {
-        "name": "Jason Bourne",
+        "username": "Jason Bourne",
         "email": "david.webb@gmail.com",
         "password": //WHAT
 
     },
     {
-        "name": "Forrest Gump",
+        "username": "Forrest Gump",
         "email": "runforrest@yahoo.com",
         "password": //WHAT
     },
     {
-        "name": "Chris Kringle",
+        "username": "Chris Kringle",
         "email": "bigred@outlook.com",
         "password": //WHAT
     }
