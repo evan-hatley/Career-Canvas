@@ -1,51 +1,31 @@
-const jobStatusCount = {
-    applied: 0,
-    interviewed: 0,
-    offer: 0,
-    declined: 0
-};
-
-function updateChart(chart, statusCount) {
-    chart.data.datasets[0].data = [
-        statusCount.applied,
-        statusCount.interviewed,
-        statusCount.offer,
-        statusCount.declined
-    ];
-    chart.update();
-}
-
-document.getElementById('newJobForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const jobStatus = document.getElementById('jobStatus').value;
-    
-    jobStatusCount[jobStatus]++;
-    
-    updateChart(jobApplicationChart, jobStatusCount);
-
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const data = {
-        labels: ['Applied', 'Interviewed', 'Offer', 'Declined'],
-        datasets: [{
-            label: 'Job Application Status',
-            data: [jobStatusCount.applied, jobStatusCount.interviewed, jobStatusCount.offer, jobStatusCount.declined],
-            hoverOffset: 4,
-            borderWidth: 1
-        }]
-    };
-
-    const ctx = document.getElementById('jobApplicationChart').getContext('2d');
-    const jobApplicationChart = new Chart(ctx, {
+document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('jobApplicationChart');
+    let myChart = new Chart(ctx, {
         type: 'doughnut',
-        data: data,
+        data: {
+            labels: ['Applied', 'Interviewed', 'Offered', 'Declined'],
+            datasets: [{
+                label: 'Job Application Status',
+                data: [0, 0, 0, 0], 
+                borderWidth: 1
+            }]
+        },
         options: {
-            title: {
-                display: true,
-                text: 'Job Application Status'
-            },
+            responsive: true,
+            maintainAspectRatio: false
         }
+    });
+
+    document.getElementById('jobStatusForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const applied = parseInt(document.getElementById('applied').value) || 0;
+        const interviewed = parseInt(document.getElementById('interviewed').value) || 0;
+        const offered = parseInt(document.getElementById('offered').value) || 0;
+        const declined = parseInt(document.getElementById('declined').value) || 0;
+
+        myChart.data.datasets[0].data = [applied, interviewed, offered, declined];
+        
+        myChart.update();
     });
 });

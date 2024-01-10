@@ -35,3 +35,5 @@ View the progress chart on the profile page that quickly breaks down the statist
 ## Credits
 
 ## Screenshot
+
+### `npm start`
