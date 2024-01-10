@@ -6,8 +6,8 @@
 <div class="col-md-6 job-list">
     <h3>Prospective Jobs:</h3>
 
-    <table class="jobTable">
-        <thead>
+    <table style="width:100%" id="table-spacing" class="jobTable">
+        <thead style="text-align:left">
             <tr>
                 <th>Job Title</th>
                 <th>Status</th>
@@ -26,6 +26,7 @@
                 <td>{{convertToSalary job.salary}}</td>
                 <td>{{job.location}}</td>
                 <td>{{job.notes}}</td>
+                <td>{{job.actions}}</td>
             </tr>
             {{/each}}
         </tbody>
