@@ -16,7 +16,7 @@ const signupFormHandler = async (event) => {
 
         if (response.ok) {
 
-            document.location.replace('/tracker');
+            document.location.replace('/');
           
         } else {
             // Not found (404) -> URL requested doesn't exist on server.
