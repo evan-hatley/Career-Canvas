@@ -36,7 +36,7 @@ h2 {
     color: #2A607C;
     /* padding-top: 20px; */
     font-family: "Permanent Marker";
-    font-size: 60px;
+    font-size: 40px;
     text-shadow: 1px 1px white;
 }
 #login-container {
@@ -69,6 +69,10 @@ h2 {
     display: inline-block;
 }
 
+#submit-btn-padding {
+    padding-top: 20px;;
+}
+
 #login-btn-padding {
     padding-top: 20px;;
 }
@@ -97,4 +101,18 @@ table, th, td {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
+}
+
+#job-status-wrap {
+    width: 40%;
+    padding-top: 30px;
+    padding-left: 100px;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#chartDiv {
+    float: right;
+    padding-right: 180px;
 }
