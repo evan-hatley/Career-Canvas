@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: ['Applied', 'Interviewed', 'Offered', 'Declined'],
             datasets: [{
                 label: 'Job Application Status',
-                data: [0, 0, 0, 0], // Initial data set to zeros
+                data: [0, 0, 0, 0], 
                 borderWidth: 1
             }]
         },
@@ -19,16 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('jobStatusForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Retrieve values from the form
         const applied = parseInt(document.getElementById('applied').value) || 0;
         const interviewed = parseInt(document.getElementById('interviewed').value) || 0;
         const offered = parseInt(document.getElementById('offered').value) || 0;
         const declined = parseInt(document.getElementById('declined').value) || 0;
 
-        // Update chart data
         myChart.data.datasets[0].data = [applied, interviewed, offered, declined];
         
-        // Redraw the chart
         myChart.update();
     });
 });
