@@ -24,6 +24,7 @@
   "homepage": "https://github.com/evan-hatley/Career-Canvas#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bulma": "^0.9.4",
     "chart.js": "^4.4.1",
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^16.3.1",
