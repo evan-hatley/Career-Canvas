@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
             datasets: [{
                 label: 'Job Application Status',
                 data: chartData,
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: ['blue', 'orange', 'green', 'red']
             }]
         },
         options: {
