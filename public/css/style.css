@@ -1,9 +1,9 @@
 body {
-    background-color:blanchedalmond;
+    background-color:aliceblue;
     height: 100vh;
 }
 header {
-    padding: 20px;
+    /* padding: 20px; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #2A607C;
     color: #FFFFFF;
@@ -11,19 +11,20 @@ header {
 }
 h1 {
     text-align: center;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-family: "Permanent Marker";
     font-size: 60px;
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 1px black;
 }
 .nav {
-    padding-top: 15px;
+    /* padding-top: 15px; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     display: inline-block;
     display: flex;
     justify-content: center;
     text-decoration: underline;
+    flex-direction: row;
     /* word-spacing: 20px; */
 }
 /* .space {
@@ -33,10 +34,10 @@ h1 {
 h2 {
     text-align: center;
     color: #2A607C;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-family: "Permanent Marker";
     font-size: 60px;
-    text-shadow: 2px 2px white;
+    text-shadow: 1px 1px white;
 }
 #login-container {
     text-align: center;
@@ -46,15 +47,54 @@ h2 {
     font-size: 30px;
     /* text-shadow: 2px 2px white; */
 }
-#navbar {
+
+#signup-container {
+    text-align: center;
+    color: #2A607C;
+    padding-top: 5px;
+    font-family: "Permanent Marker";
+    font-size: 30px;
+}
+/* #navbar {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #2A607C;
     color: #FFFFFF;
     text-decoration: none;
-}
+} */
 .nav-text-color {
     color: white;
     padding-right: 20px;
     padding-left: 20px;
+    display: inline-block;
+}
+
+#login-btn-padding {
+    padding-top: 20px;;
+}
+
+#table-spacing {
+    /* padding-top: 15px; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    /* display: inline-block; */
+    /* display: flex; */
+    justify-content: center;
+    /* text-decoration: underline; */
+    flex-direction: row;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.create-job-padding {
+    padding-top: 20px;
+}
+
+#add-job-btn-spacing {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
 }
