@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('jobApplicationChart');
+    let chartData = [0, 0, 0, 0];
+
+    const savedData = localStorage.getItem('jobApplicationChartData');
+    if (savedData) {
+        chartData = JSON.parse(savedData);
+    }
+
     let myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: ['Applied', 'Interviewed', 'Offered', 'Declined'],
             datasets: [{
                 label: 'Job Application Status',
-                data: [0, 0, 0, 0], 
+                data: chartData,
                 borderWidth: 1
             }]
         },
@@ -25,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const declined = parseInt(document.getElementById('declined').value) || 0;
 
         myChart.data.datasets[0].data = [applied, interviewed, offered, declined];
-        
         myChart.update();
+
+        localStorage.setItem('jobApplicationChartData', JSON.stringify([applied, interviewed, offered, declined]));
     });
 });
