@@ -6,15 +6,15 @@ const { Op } = require('sequelize');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       order: [['username', 'ASC']],
     });
 
-    const users = userData.map((job) => job.get({ plain: true }));
+    const user = userData.get({ plain: true });
 
     res.render('homepage', {
-      users,
+      user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
