@@ -1,4 +1,5 @@
 # Career-Canvas
+[![License Badge](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## Table of Contents
 
@@ -7,8 +8,9 @@
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Credits](#credits)
-- [Screenshot](#screenshot)
-- [Link](#link)
+- [Screenshots](#screenshots)
+- [Links](#links)
+- [License](#license)
 
 ## Description
 
@@ -30,15 +32,68 @@ View the progress chart on the profile page that quickly breaks down the statist
 
 ## Technologies
 
-- JavaScript
+- Bcrypt
 - Chart.js
-- Node
+- Connect Session Sequelize
+- Dotenv
+- Express Handlebars
+- Express Session
 - Express.js
+- JavaScript
 - MySQL2
+- Node
 - Sequelize
 
 ## Credits
 
-## Screenshot
+The following resources were utilized for this project:
 
-## Link
+- KU Coding Bootcamp Spot:
+    - Provided project requirements and guidelines.
+- KU GitLab:
+    - Referenced for general documentation.
+- W3Schools:
+    - Referenced for general documentation.
+- MDN Web Docs:
+    - Referenced for general documentation.
+- Stack Overflow:
+    - Referenced for general documentation.
+- NPM:
+    - [NPM](https://npmjs.com)
+- Chart JS:
+    - [Chart JS Documentation](https://www.chartjs.org/docs/latest/getting-started/)
+- MySQL2:
+    - [MySQL2 Package](https://www.npmjs.com/package/mysql2)
+    - [MySQL2 Documentation](https://github.com/sidorares/node-mysql2/tree/master/documentation/en)
+- Sequelize:
+    - [Sequelize Documentation](https://sequelize.org/docs/v6/category/core-concepts/)
+- Insomnia:
+    - [Insomnia Documentation](https://docs.insomnia.rest)
+- Express:
+    - [Express Documentation](https://expressjs.com/en/5x/api.html)
+- Express Handlebars:
+    - [Express Handlebars Documentation](https://www.npmjs.com/package/express-handlebars)
+- Bcrypt:
+    - [Bcrypt Documentation](https://www.npmjs.com/package/bcrypt)
+- Node.js:
+    - [Node.js Documentation](https://nodejs.org/docs/latest/api/documentation.html)
+- GitHub:
+    - [MarioColunga](https://github.com/MarioColunga):
+        - [TECH-BLOG-MVC](https://github.com/MarioColunga/TECH-BLOG-MVC/tree/main)
+- YouTube:
+    - [WittCode - Sequelize Tutorial: Episode 4 - Model Querying](https://www.youtube.com/watch?v=jWdVy265Q-A&list=PLkqiWyX-_Lov8qmMOVn4SEQwr9yOjNn3f&index=4&pp=iAQB):
+    - [Red Stapler - Chart.js 2.0 Tutorial - Update Chart Data Dynamically](https://www.youtube.com/watch?v=De-zusP8QVM&list=PLBG4BJt8bo9rrPibhKLbpe-z1Dkk2VJjO&index=14&t=10s&pp=iAQB)
+    - [Sky Data Labs - Chart.js Visualization](https://www.youtube.com/watch?v=dMNBuLcbOPY&list=PLBG4BJt8bo9rrPibhKLbpe-z1Dkk2VJjO&index=16&t=5s&pp=iAQB)
+    - [Sky Data Labs - Chart.js Visualization](https://www.youtube.com/watch?v=dMNBuLcbOPY&list=PLBG4BJt8bo9rrPibhKLbpe-z1Dkk2VJjO&index=16&t=5s&pp=iAQB)
+    - [Prof Dr Sabri Erdem - Creating Dashboards Using Google Charts, PHP, and MySQL Database](https://www.youtube.com/watch?v=mKOz5fZ8HV0&list=PLBG4BJt8bo9rrPibhKLbpe-z1Dkk2VJjO&index=3&t=842s&pp=iAQB)
+    - [Chart JS - Fetch and Display Advanced JSON Data in Chart JS](https://www.youtube.com/watch?v=mw5i_QGDomw&t=978s&pp=ygUXc2VxdWVsaXplIHdpdGggY2hhcnQuanM%3D)
+    - [Chart JS - Fetch Dynamically Update JSON Data in Chart JS](https://www.youtube.com/watch?v=XA65_9LX0Vo&t=86s&pp=ygUdZmV0Y2ggZHluYW1pY2FsbHkgdXBkYXRlIGpzb24%3D)
+    - [Chart JS - How to use Fetch API to Automatically Update Data with JSON in Chart JS](https://www.youtube.com/watch?v=7KBwz1pcQsw&pp=ygUdZmV0Y2ggZHluYW1pY2FsbHkgdXBkYXRlIGpzb24%3D)
+
+## Screenshots
+
+## Links
+
+## License
+
+This project is available under the following license: MIT. For more information on rights and limitations, please review the [LICENSE](./LICENSE) file.
