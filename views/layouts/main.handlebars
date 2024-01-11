@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Career Canvas</title>
 </head>
 
@@ -20,7 +20,7 @@
                     <li><a class="nav-text-color" class="nav-links" href="/">Home</a></li>
                     <li><a class="nav-text-color" class="nav-links" href="/tracker">Job Tracker</a></li>
                     {{#if logged_in}}
-                    <li><a class="nav-links" href="/" id="logout">Logout</a></li>
+                    <li><a class="nav-text-color" class="nav-links" href="/" id="logout">Logout</a></li>
                     {{else}}
                     <li><a class="nav-text-color" class="nav-links" href="/login">Login</a></li>
                     {{/if}}
