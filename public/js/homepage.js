@@ -1,6 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('jobApplicationChart');
+document.addEventListener('DOMContentLoaded', async function () {
+
     let chartData = [0, 0, 0, 0];
+    const ctx = document.getElementById('jobApplicationChart');
 
     const savedData = localStorage.getItem('jobApplicationChartData');
     if (savedData) {
@@ -24,17 +25,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.getElementById('jobStatusForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    // Fetch job status data.
+    const fetchJobStatusData = async () => {
+        try {
+            const response = await fetch('/job/status');
+            return await response.json();
+        } catch (error) {
+            console.error('Error fetching job status data:', error);
+            throw error;
+        }
+    };
 
-        const applied = parseInt(document.getElementById('applied').value) || 0;
-        const interviewed = parseInt(document.getElementById('interviewed').value) || 0;
-        const offered = parseInt(document.getElementById('offered').value) || 0;
-        const declined = parseInt(document.getElementById('declined').value) || 0;
+    // Fetch and update chart data.
+    const updateChartData = async () => {
+        const data = await fetchJobStatusData();
 
-        myChart.data.datasets[0].data = [applied, interviewed, offered, declined];
+        console.log(data);
+
+        chartData = Object.values(data);
+        myChart.data.datasets[0].data = chartData;
+
+        console.log(chartData);
+
         myChart.update();
+        localStorage.setItem('jobApplicationChartData', JSON.stringify(chartData));
+    };
 
-        localStorage.setItem('jobApplicationChartData', JSON.stringify([applied, interviewed, offered, declined]));
-    });
+    // Call the function to fetch and update the chart data
+    await updateChartData();
 });

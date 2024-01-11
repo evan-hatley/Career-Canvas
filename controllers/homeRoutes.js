@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Job, User } = require('../models');
 const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection.js');
+const { Op } = require('sequelize');
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -17,6 +19,42 @@ router.get('/', withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+// For doughnut chart.
+router.get('/job/status', withAuth, async (req, res) => {
+  try {
+    const statusOrder = ['Applied', 'Interviewed', 'Offered', 'Declined'];
+
+    const where = {
+      status: {
+        [Op.in]: statusOrder,
+      },
+    };
+
+    const jobStatusCounts = await Job.findAll({
+      attributes: ['status', [sequelize.fn('COUNT', sequelize.col('status')), 'count']],
+      where: where,
+      group: ['status'],
+    });
+
+    const statusCounts = {};
+
+    // Init counts in order.
+    statusOrder.forEach((status) => {
+      statusCounts[status] = 0;
+    });
+
+    // Update counts.
+    jobStatusCounts.forEach((statusCount) => {
+      statusCounts[statusCount.status] = statusCount.get('count');
+    });
+
+    res.json(statusCounts);
+  } catch (err) {
+    console.error('Error fetching job status counts:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
