@@ -9,16 +9,25 @@
 </head>
 
 <body>
-<h1>Welcome to the Homepage, {{username}}!</h1>
+<h1>Welcome to the Homepage!</h1>
 <h2>See how your job statuses are looking!</h2>
+
 
 <aside id="job-status-wrap">
 <form id="jobStatusForm">
   <div>
+    <div class="homepage-field-spacing">
     <input class="input is-info" type="number" id="applied" name="applied" placeholder="Applied">
-    <input class="input is-danger" type="number" id="interviewed" name="interviewed" placeholder="Interviewed">
-    <input class="input is-warning" type="number" id="offered" name="offered" placeholder="Offered">
-    <input class="input is-warning-light" type="number" id="declined" name="declined" placeholder="Declined">
+    </div>
+    <div class="homepage-field-spacing">
+    <input class="input is-warning" type="number" id="interviewed" name="interviewed" placeholder="Interviewed">
+    </div>
+    <div class="homepage-field-spacing">
+    <input class="input is-success" type="number" id="offered" name="offered" placeholder="Offered">
+    </div>
+    <div class="homepage-field-spacing">
+    <input class="input is-danger" type="number" id="declined" name="declined" placeholder="Declined">
+    </div>
     <div id="submit-btn-padding">
     <button class="button is-large is-responsive is-success is-rounded" type="submit">Submit</button>
     </div>
@@ -28,6 +37,7 @@
 <div id="chartDiv"><canvas id="jobApplicationChart"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </div>
+
 
 </body>
 
