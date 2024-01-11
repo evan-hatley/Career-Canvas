@@ -7,37 +7,39 @@
     <form class="forms" id="edit-job-form">
         <div class="form-group">
             <label for="job-title">Job Title:</label>
-            <input class="form-input" type="text" id="job-title" value="{{title}}" />
+            <input class="input is-rounded" class="input is-success" class="form-input" type="text" id="job-title" value="{{title}}" />
         </div>
 
-        <div class="form-group">
+        <div class="create-job-padding" class="form-group">
             <label for="job-status">Status:</label>
+            <div class="select is-rounded">
             <select id="job-status" name="job-status">
                 <option value="applied" {{#if (eq status "applied" )}}selected{{/if}}>Applied</option>
                 <option value="interviewed" {{#if (eq status "interviewed" )}}selected{{/if}}>Interviewed</option>
                 <option value="offered" {{#if (eq status "offered" )}}selected{{/if}}>Offered</option>
                 <option value="declined" {{#if (eq status "declined" )}}selected{{/if}}>Declined</option>
             </select>
+            </div>
         </div>
 
-        <div class="form-group">
+        <div class="create-job-padding" class="form-group">
             <label for="job-salary">Salary:</label>
-            <textarea class="form-input" id="job-salary" name="job-salary">{{salary}}</textarea>
+            <textarea class="textarea is-success" placeholder="e.g.- 50000" class="form-input" id="job-salary" name="job-salary">{{salary}}</textarea>
         </div>
 
-        <div class="form-group">
+        <div class="create-job-padding" class="form-group">
             <label for="job-location">Location:</label>
-            <textarea class="form-input" id="job-location" name="job-location">{{location}}</textarea>
+            <textarea class="textarea is-success" placeholder="e.g.- Remote, New York, Denver" class="form-input" id="job-location" name="job-location">{{location}}</textarea>
         </div>
 
-        <div class="form-group">
+        <div class="create-job-padding" class="form-group">
             <label for="job-notes">Notes:</label>
-            <textarea class="form-input" id="job-notes" name="job-notes">{{notes}}</textarea>
+            <textarea class="textarea is-success" placeholder="Use this area to include any additional information you may want." class="form-input" id="job-notes" name="job-notes">{{notes}}</textarea>
         </div>
 
-        <div>
-            <button class="btns" id="update-btn" type="submit">Update</button>
-            <button class="btns" id="delete-btn" type="button">Delete</button>
+        <div class="add-job-btn-spacing">
+            <button class="button is-large is-responsive is-success is-rounded" class="btns" id="update-btn" type="submit">Update</button>
+            <button class="button is-large is-responsive is-danger is-rounded" class="btns" id="delete-btn" type="button">Delete</button>
         </div>
 
     </form>
