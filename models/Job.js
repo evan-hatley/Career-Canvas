@@ -19,7 +19,6 @@ Job.init(
         // 4 options: applied, interviewed, offered, declined.
         status: {
             type: DataTypes.ENUM('Applied', 'Interviewed', 'Offered', 'Declined'),
-            defaultValue: 'Applied',
             allowNull: false,
         },
         salary: {
