@@ -8,7 +8,6 @@
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Credits](#credits)
-- [Screenshots](#screenshots)
 - [Links](#links)
 - [License](#license)
 
@@ -90,9 +89,10 @@ The following resources were utilized for this project:
     - [Chart JS - Fetch Dynamically Update JSON Data in Chart JS](https://www.youtube.com/watch?v=XA65_9LX0Vo&t=86s&pp=ygUdZmV0Y2ggZHluYW1pY2FsbHkgdXBkYXRlIGpzb24%3D)
     - [Chart JS - How to use Fetch API to Automatically Update Data with JSON in Chart JS](https://www.youtube.com/watch?v=7KBwz1pcQsw&pp=ygUdZmV0Y2ggZHluYW1pY2FsbHkgdXBkYXRlIGpzb24%3D)
 
-## Screenshots
 
-## Links
+## Links 
+
+[heroku](https://dashboard.heroku.com/apps/fierce-depths-59937)
 
 ## License
 
