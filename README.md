@@ -92,7 +92,7 @@ The following resources were utilized for this project:
 
 ## Links 
 
-[heroku]([https://dashboard.heroku.com/apps/fierce-depths-59937](https://fierce-depths-59937-afaae183c587.herokuapp.com/login))
+[heroku]([https://dashboard.heroku.com/apps/fierce-depths-59937](https://fierce-depths-59937-afaae183c587.herokuapp.com/login)
 
 ## License
 
