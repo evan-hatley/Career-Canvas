@@ -2,33 +2,29 @@
     {
         "title": "Python Engineer",
         "status": "applied",
-        "salary": "100000",
+        "salary": 100000,
         "location": "Seatle, WA",
-        "notes": "Great location, SMP 500 company",
-        "user_id": "1"
+        "notes": "Great location, SMP 500 company"
     },
     {
         "title": "Frontend Developer",
         "status": "declined",
-        "salary": "70000",
+        "salary": 70000,
         "location": "Dallas, TX",
-        "notes": "Good interview but said they don't test code, not industry standard",
-        "user_id": "0"
+        "notes": "Good interview but said they don't test code, not industry standard"
     },
     {
         "title": "Full Stack Engineer",
         "status": "offered",
-        "salary": "110000",
+        "salary": 110000,
         "location": "Ontario, CAN",
-        "notes": "Cold but hybrid work",
-        "user_id": "0"
+        "notes": "Cold but hybrid work"
     },
     {
         "title": "Application Software Engineer",
         "status": "interviewed",
-        "salary": "180000",
+        "salary": 180000,
         "location": "Starbase, TX",
-        "notes": "Crazy cool, great interview, rocket ships",
-        "user_id": "0"
+        "notes": "Crazy cool, great interview, rocket ships"
     }
 ]

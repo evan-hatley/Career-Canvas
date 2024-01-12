@@ -8,15 +8,21 @@ const userData = require('./user-seeds.json');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
-    await Job.bulkCreate(jobData, {
+    const users = await User.bulkCreate(userData, {
         individualHooks: true,
         returning: true,
     });
 
-    await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-    });
+    let i = 0;
+
+    for (const job of jobData) {
+        await Job.create({
+            ...job,
+            user_id: users[i].id,
+        });
+
+        userIndex = (i + 1) % users.length;
+    }
 
     process.exit(0);
 };
