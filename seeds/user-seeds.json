@@ -2,31 +2,16 @@
     {
         "username": "Jason Bourne",
         "email": "david.webb@gmail.com",
-        "password": //WHAT
-
+        "password": "12345678"
     },
     {
         "username": "Forrest Gump",
         "email": "runforrest@yahoo.com",
-        "password": //WHAT
+        "password": "12345678"
     },
     {
         "username": "Chris Kringle",
         "email": "bigred@outlook.com",
-        "password": //WHAT
+        "password": "12345678"
     }
 ]
-
-// (async () => {
-//     let data = {
-//       name: 'Abraham Jujin',
-//       email: 'abe@gmail.com',
-//       password: 'abe1234',
-//       phoneNumber: '08168623107',
-//       role: 'admin',
-//     };
-//     let saltRounds = 10;
-//     let hashedPassword = await bcrypt.hash(data.password, saltRounds);
-  
-//     data.password = hashedPassword;
-//     console.log(data.password);

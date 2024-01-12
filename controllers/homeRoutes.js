@@ -23,11 +23,14 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // For doughnut chart.
-router.get('/job/status', withAuth, async (req, res) => {
+router.get('/api/users/status', withAuth, async (req, res) => {
   try {
+    const userId = req.session.user_id;
+
     const statusOrder = ['Applied', 'Interviewed', 'Offered', 'Declined'];
 
     const where = {
+      user_id: userId,
       status: {
         [Op.in]: statusOrder,
       },

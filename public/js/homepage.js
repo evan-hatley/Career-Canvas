@@ -3,11 +3,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     let chartData = [0, 0, 0, 0];
     const ctx = document.getElementById('jobApplicationChart');
 
-    const savedData = localStorage.getItem('jobApplicationChartData');
-    if (savedData) {
-        chartData = JSON.parse(savedData);
-    }
-
     let myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -28,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Fetch job status data.
     const fetchJobStatusData = async () => {
         try {
-            const response = await fetch('/job/status');
+            const response = await fetch('/api/users/status');
             return await response.json();
         } catch (error) {
             console.error('Error fetching job status data:', error);
@@ -48,7 +43,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.log(chartData);
 
         myChart.update();
-        localStorage.setItem('jobApplicationChartData', JSON.stringify(chartData));
     };
 
     // Call the function to fetch and update the chart data
